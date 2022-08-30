@@ -1,0 +1,115 @@
+<div class="container  mt-4">
+    <form class="row g-3" #myForm="ngForm" (submit)="myForm.form.valid && submit(myForm.value)">
+        <div class="col-md-6">
+            <!-- <form class="row g-3" #myForm="ngForm" (submit)="myForm.form.valid && submit(myForm.value)"> -->
+            <div class="form-group mt-5">
+                <input type="text" class="form-control" required #locationId1="ngModel" ngModel name="locationId" placeholder="Location Id" [ngClass]="{'is-invalid':myForm.submitted && locationId1.invalid}">
+                <span *ngIf="( locationId1.touched && !locationId1.valid )" style="color: red;">Location id is required</span>
+                <div *ngIf="myForm.submitted && !locationId1.valid" class="invalid-feedback">
+                    <div *ngIf="locationId1.errors">Location contact Name is required</div>
+                </div>
+            </div>
+            <div class="form-group mt-5">
+                <input type="text" class="form-control" required #LocationDisplay1="ngModel" ngModel name="LocationDisplay " placeholder="location Display Name" [ngClass]="{'is-invalid':myForm.submitted && LocationDisplay1.invalid}">
+                <span *ngIf="( LocationDisplay1.touched && !LocationDisplay1.valid ) " style="color: red;">Location Display Name is required</span>
+                <div *ngIf="myForm.submitted && !LocationDisplay1.valid" class="invalid-feedback">
+                    <div *ngIf="LocationDisplay1.errors">Location Display Name is required</div>
+                </div>
+            </div>
+
+            <div class="form-group mt-5">
+                <h3>Address Details</h3>
+            </div>
+            <div class="form-group mt-5">
+                <input type="text" class="form-control" required #search1="ngModel" ngModel name="search" placeholder="Search address" [ngClass]="{'is-invalid':myForm.submitted && search1.invalid}">
+                <span *ngIf="( search1.touched && !search1.valid ) " style="color: red;">search is required</span>
+                <div *ngIf="myForm.submitted && !search1.valid" class="invalid-feedback">
+                    <div *ngIf="search1.errors">search is required</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-5" [ngStyle]="{'color':street1.valid}">
+                    <input type="text" class="form-control" required #street1="ngModel" ngModel name="street" placeholder="Street" [ngClass]="{'is-invalid':myForm.submitted && street1.invalid}">
+                    <span *ngIf="(street1.touched && !street1.valid )" style="color: red; border-color: brown;">street is required</span>
+                    <div *ngIf="myForm.submitted && !street1.valid" class="invalid-feedback">
+                        <div *ngIf="street1.errors">street is required</div>
+                    </div>
+                </div>
+                <div class="col mt-5" [style.color]="city1.valid">
+                    <input type="text" class="form-control" required #city1="ngModel" ngModel name="city" placeholder="City" [ngClass]="{'is-invalid':myForm.submitted && city1.invalid}" aria-label="">
+                    <span *ngIf="(city1.touched && !city1.valid)" style="color: red;">city is required</span>
+                    <div *ngIf="myForm.submitted && !city1.valid" class="invalid-feedback">
+                        <div *ngIf="city1.errors">city is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-5">
+                    <input type="text" class="form-control" required #state1="ngModel" ngModel name="State" placeholder="State" [ngClass]="{'is-invalid':myForm.submitted && state1.invalid}" aria-label="">
+                    <span *ngIf=" (state1.touched && !state1.valid)" style="color: red;">state is required</span>
+                    <div *ngIf="myForm.submitted && !state1.valid" class="invalid-feedback">
+                        <div *ngIf="state1.errors">state is required</div>
+                    </div>
+                </div>
+                <div class="col mt-5">
+                    <input type="text" class="form-control" required #country1="ngModel" ngModel name="country" placeholder="Country" [ngClass]="{'is-invalid':myForm.submitted && country1.invalid}" aria-label="">
+                    <span *ngIf=" (country1.touched && !country1.valid)" style="color: red;">country is required</span>
+                    <div *ngIf="myForm.submitted && !country1.valid" class="invalid-feedback">
+                        <div *ngIf="country1.errors">Country is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-5">
+                <input type="text" class="form-control" required #pascalcode1="ngModel" ngModel name="pascalcode" placeholder="Pascal code" [ngClass]="{'is-invalid':myForm.submitted && pascalcode1.invalid}">
+                <span *ngIf=" (pascalcode1.touched && !pascalcode1.valid)" style="color: red;">postalcode is required</span>
+                <div *ngIf="myForm.submitted && !pascalcode1.valid" class="invalid-feedback">
+                    <div *ngIf="pascalcode1.errors">pascalcode is required</div>
+                </div>
+            </div>
+            <div class="col-12 mt-5">
+                <button type="reset" class="btn ">cancel</button> &nbsp;
+                <button type="submit" class="btn btn-danger">Submit</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group mt-5">
+                <input type="text" class="form-control" required #locationTitle1="ngModel" ngModel name="locationTitle" placeholder="Location Contact Title" [ngClass]="{'is-invalid':myForm.submitted && locationTitle1.invalid}">
+                <span *ngIf="( locationTitle1.touched && !locationTitle1.valid ) " style="color: red;">Location contact title is required</span>
+                <div *ngIf="myForm.submitted && !locationTitle1.valid" class="invalid-feedback">
+                    <div *ngIf="locationTitle1.errors">Location contact title is required</div>
+                </div>
+            </div>
+            <div class="form-group mt-5">
+                <input type="text" class="form-control" required #locationName1="ngModel" ngModel name="locationName" placeholder="Location Contact Name" [ngClass]="{'is-invalid':myForm.submitted &&  locationName1.invalid}">
+                <span *ngIf="( locationName1.touched && !locationName1.valid ) " style="color: red;">Location contact Name is required</span>
+                <div *ngIf="myForm.submitted && !locationName1.valid" class="invalid-feedback">
+                    <div *ngIf="locationName1.errors">Location contact Name is required</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col mt-4">
+                    <div class="input-group mt-2">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="input" data-bs-toggle="dropdown" aria-expanded="false">+1USA<Code></Code></button>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="">Action</a></li>
+                            <li><a class="dropdown-item" href="">Another action</a></li>
+                            <li><a class="dropdown-item" href="">Something else here</a></li>
+                        </ul>
+                        <input type="text" class="form-control" required #locationNumber1="ngModel" ngModel name="locationNumber" placeholder="Location Contact Number" [ngClass]="{'is-invalid':myForm.submitted && locationNumber1.invalid}">
+                    </div>
+                    <span *ngIf="( locationNumber1.touched && !locationNumber1.valid ) || myForm.submitted" style="color: red;">Location Contact Number is required</span>
+                    <div *ngIf="myForm.submitted && !locationNumber1.valid" class="invalid-feedback">
+                        <div *ngIf="locationNumber1.errors">Location Number is required</div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group mt-5">
+                <input type="text" class="form-control" required #locationEmail1="ngModel" ngModel name="locationEmail" placeholder="Location Contact Email" [ngClass]="{'is-invalid':myForm.submitted && locationEmail1.invalid}">
+                <span *ngIf="( locationEmail1.touched && !locationEmail1.valid ) || myForm.submitted" style="color: red;">location Contact Email is required</span>
+                <div *ngIf="myForm.submitted && !locationEmail1.valid" class="invalid-feedback">
+                    <div *ngIf="locationEmail1.errors">Location email is required</div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
